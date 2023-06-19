@@ -1,3 +1,9 @@
-from django.test import TestCase
+from unittest import TestCase
+from rest_framework.test import APIClient
 
-# Create your tests here.
+
+class TestSampleView(TestCase):
+    def test_view(self):
+        client = APIClient()
+        response = client.get('/api/v1/test/')
+        self.assertEquals(response.data, 'This is checking')
