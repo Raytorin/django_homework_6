@@ -67,7 +67,4 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-            cd /home/roman/projects/project_1/django_homework_6
-            git pull origin cicd
-            sudo systemctl restart gunicorn
+          script: expect /home/roman/projects/project_1/django_homework_6/pull.exp
